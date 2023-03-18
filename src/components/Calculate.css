@@ -1,0 +1,19 @@
+.Container{
+  display:grid;
+  width:400px;
+  height:600px;
+  grid-template-columns: repeat(5,1fr);
+  grid-template-rows: repeat(6,1fr);
+}
+.Output{
+  grid-column: 1/ -1;
+  background-color: rgba(0,0,0,.75);
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  justify-content:space-between;
+}
+.Output div{
+  font-size:2rem;
+  color:white;
+}
