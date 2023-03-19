@@ -6,6 +6,7 @@ body{
 .flex{
   display:flex;
   height:100vh;
+  gap:50px;
   justify-content:center;
   align-items:center;
 }
