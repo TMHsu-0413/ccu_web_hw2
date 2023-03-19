@@ -5,7 +5,7 @@ import './Calculate.css'
 import { CalContext } from '../CalContext';
 
 const Calculate = () => {
-  const {prevNum,curNum,clear,delDigit} = useContext(CalContext)
+  const {prevNum,curNum,clear,delDigit,exp,log,sqrt,sin,cos,tan,add,sub,mul,div,equal} = useContext(CalContext)
   return (
     <div className="Container">
 
@@ -15,33 +15,33 @@ const Calculate = () => {
       </div>
 
       <OperationButton Operate="AC" func={clear} />
-      <OperationButton Operate="BS" func={delDigit}>BS</OperationButton>
-      <button>exp</button>
-      <button>log</button>
-      <button>÷</button>
+      <OperationButton Operate="BS" func={delDigit} />
+      <OperationButton Operate="exp" func={exp} />
+      <OperationButton Operate="log" func={log} />
+      <OperationButton Operate="÷" func={div} />
 
       <DigitButton digit="7" />
       <DigitButton digit="8" />
       <DigitButton digit="9" />
-      <button>√</button>
-      <button>x</button>
+      <OperationButton Operate="√" func={sqrt} />
+      <OperationButton Operate="x" func={mul} />
 
       <DigitButton digit="4" />
       <DigitButton digit="5" />
       <DigitButton digit="6" />
-      <button>sin</button>
-      <button>-</button>
+      <OperationButton Operate="sin" func={sin} />
+      <OperationButton Operate="-" func={sub} />
 
       <DigitButton digit="1" />
       <DigitButton digit="2" />
       <DigitButton digit="3" />
-      <button>cos</button>
-      <button>+</button>
+      <OperationButton Operate="cos" func={cos} />
+      <OperationButton Operate="+" func={add} />
 
       <DigitButton digit="0" />
       <DigitButton digit="." />
-      <button>tan</button>
-      <button>=</button>
+      <OperationButton Operate="tan" func={tan} />
+      <OperationButton Operate="=" func={equal} />
     </div>
   )
 }
