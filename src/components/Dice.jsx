@@ -7,6 +7,12 @@ const Dice = () => {
   const btnRef = useRef();
   const {addDigit} = useContext(CalContext);
 
+  const playAudio = () => {
+    const Audio = document.createElement("audio");
+    Audio.src = require('../image/die.mp3');
+    Audio.play();
+  }
+
   const rolling = () => {
     return new Promise((resolve,reject) => {
       setTimeout(() => {
@@ -24,6 +30,7 @@ const Dice = () => {
       const roll = require("../image/roll_die.gif");
       imgRef.current.src = roll
 
+      playAudio();
       await rolling()
 
       var num = Math.floor(Math.random()*6) + 1;
