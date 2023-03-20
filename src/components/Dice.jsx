@@ -29,15 +29,16 @@ const Dice = () => {
       btnRef.current.disabled = true;
       const roll = require("../image/roll_die.gif");
       imgRef.current.src = roll
-
       playAudio();
-      await rolling()
 
-      var num = Math.floor(Math.random()*6) + 1;
-      const newSrc = require("../image/die_pic/" + num + ".png");
-      addDigit(num.toString())
-      btnRef.current.disabled = false;
-      imgRef.current.src = newSrc;
+      rolling().then(() => {
+        var num = Math.floor(Math.random()*6) + 1;
+        const newSrc = require("../image/die_pic/" + num + ".png");
+        addDigit(num.toString())
+        btnRef.current.disabled = false;
+        imgRef.current.src = newSrc;
+      })
+
 
     }}>擲骰子</button>
   </div>
